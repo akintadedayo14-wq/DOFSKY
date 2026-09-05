@@ -813,7 +813,7 @@ form {
     .mobile-brand .brand-info strong {
         color: #ffffff;
 
-        font-size: 13px;
+        font-size: 15px;
     }
 
     .mobile-brand .brand-info span {
@@ -845,7 +845,21 @@ form {
     .dashboard-overview {
         grid-template-columns: 1fr;
 
-        gap: 10px;
+        gap: 8px;
+    }
+
+    .overview-card {
+        padding: 14px;
+
+        gap: 5px;
+    }
+
+    .overview-card span {
+        font-size: 13px;
+    }
+
+    .overview-card strong {
+        font-size: 24px;
     }
 
     .panel {
