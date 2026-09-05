@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DOFSKY — Clients</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="brand">
+
+                <a href="index.html" class="brand-link">
+
+                    <div class="brand-mark">D</div>
+
+                    <div class="brand-info">
+                        <strong>DOFSKY</strong>
+                        <span>Workspace</span>
+                    </div>
+
+                </a>
+
+            </div>
+
+
+            <nav class="navigation" aria-label="Main navigation">
+
+                <a href="index.html" class="nav-item">
+                    <span aria-hidden="true">▦</span>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="projects.html" class="nav-item">
+                    <span aria-hidden="true">▣</span>
+                    <span>Projects</span>
+                </a>
+
+                <a href="tasks.html" class="nav-item">
+                    <span aria-hidden="true">✓</span>
+                    <span>Tasks</span>
+                </a>
+
+                <a href="clients.html" class="nav-item active">
+                    <span aria-hidden="true">◉</span>
+                    <span>Clients</span>
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <a href="settings.html" class="nav-item">
+                    <span aria-hidden="true">⚙</span>
+                    <span>Settings</span>
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <main class="main-content">
+
+
+            <header class="mobile-header">
+
+                <button
+                    type="button"
+                    class="menu-button"
+                    id="menuButton"
+                    aria-label="Open navigation"
+                    aria-controls="sidebar"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
+
+
+                <div class="mobile-brand">
+
+                    <div class="brand-mark">D</div>
+
+                    <div class="brand-info">
+                        <strong>DOFSKY</strong>
+                        <span>Workspace</span>
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="primary-button"
+                    id="mobileNewClientButton"
+                >
+                    + Client
+                </button>
+
+            </header>
+
+
+            <header class="topbar">
+
+                <div class="page-heading">
+
+                    <p class="eyebrow">
+                        Workspace
+                    </p>
+
+                    <h1>
+                        Clients
+                    </h1>
+
+                    <p class="page-description">
+                        Keep your client information organized.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="primary-button"
+                    id="newClientButton"
+                >
+                    + New Client
+                </button>
+
+            </header>
+
+
+            <!-- Clients List -->
+
+            <section
+                class="panel"
+                id="clientsListSection"
+            >
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            Clients
+                        </h2>
+
+                        <p>
+                            Your clients.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="client-list"
+                    id="clientList"
+                >
+
+                    <div class="empty-state">
+
+                        <strong>
+                            No clients yet
+                        </strong>
+
+                        <span>
+                            Add your first client.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Client Details -->
+
+            <section
+                class="panel"
+                id="clientDetailsPanel"
+                hidden
+            >
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <button
+                            type="button"
+                            class="back-button"
+                            id="backToClientsButton"
+                        >
+                            ← Back to Clients
+                        </button>
+
+                        <p class="eyebrow">
+                            Client
+                        </p>
+
+                        <h2 id="detailsClientName">
+                            Client
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="editClientButton"
+                    >
+                        Edit
+                    </button>
+
+                </div>
+
+
+                <div class="client-details-body">
+
+                    <div class="client-detail-item">
+
+                        <span>
+                            Company
+                        </span>
+
+                        <strong id="detailsClientCompany">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="client-detail-item">
+
+                        <span>
+                            Email
+                        </span>
+
+                        <strong id="detailsClientEmail">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="client-detail-item">
+
+                        <span>
+                            Phone
+                        </span>
+
+                        <strong id="detailsClientPhone">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="client-detail-section">
+
+                        <h3>
+                            Notes
+                        </h3>
+
+                        <p id="detailsClientNotes">
+                            —
+                        </p>
+
+                    </div>
+
+
+                    <div class="client-detail-item">
+
+                        <span>
+                            Created
+                        </span>
+
+                        <strong id="detailsClientCreated">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Edit Client -->
+
+            <section
+                class="panel"
+                id="clientEditPanel"
+                hidden
+            >
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            Edit Client
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <form id="clientEditForm">
+
+                    <input
+                        type="hidden"
+                        id="editClientId"
+                    >
+
+
+                    <div class="form-group">
+
+                        <label for="editClientName">
+                            Client Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="editClientName"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="editClientCompany">
+                            Company
+                        </label>
+
+                        <input
+                            type="text"
+                            id="editClientCompany"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="editClientEmail">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="editClientEmail"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="editClientPhone">
+                            Phone
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="editClientPhone"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="editClientNotes">
+                            Notes
+                        </label>
+
+                        <textarea
+                            id="editClientNotes"
+                            rows="4"
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="cancelEditClientButton"
+                        >
+                            Cancel
+                        </button>
+
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            Save Changes
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- New Client -->
+
+            <section
+                class="panel"
+                id="clientFormPanel"
+                hidden
+            >
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            New Client
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <form id="clientForm">
+
+                    <div class="form-group">
+
+                        <label for="clientName">
+                            Client Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="clientName"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="clientCompany">
+                            Company
+                        </label>
+
+                        <input
+                            type="text"
+                            id="clientCompany"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="clientEmail">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="clientEmail"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="clientPhone">
+                            Phone
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="clientPhone"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="clientNotes">
+                            Notes
+                        </label>
+
+                        <textarea
+                            id="clientNotes"
+                            rows="4"
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="cancelClientButton"
+                        >
+                            Cancel
+                        </button>
+
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            Save Client
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DOFSKY — Settings</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* ========================================
+           Account
+        ======================================== */
+
+        .account-profile {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile-picture {
+            width: 80px;
+            height: 80px;
+            min-width: 80px;
+            border-radius: 50%;
+            background: #dfe7ec;
+            color: #152536;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .account-details {
+            flex: 1;
+        }
+
+        .account-name-display {
+            margin: 0 0 6px;
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .account-email-display {
+            margin: 0;
+            color: #c5d0d9;
+            font-size: 15px;
+        }
+
+        .account-edit-button {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            border: 0;
+            border-radius: 50%;
+            background: #dfe7ec;
+            color: #152536;
+            cursor: pointer;
+            font-size: 19px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .account-edit-button:hover {
+            opacity: 0.9;
+        }
+
+        .account-edit-form {
+            display: none;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .account-edit-form.open {
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+
+            .account-profile {
+                gap: 14px;
+            }
+
+            .profile-picture {
+                width: 68px;
+                height: 68px;
+                min-width: 68px;
+                font-size: 20px;
+            }
+
+            .account-name-display {
+                font-size: 20px;
+            }
+
+            .account-email-display {
+                font-size: 14px;
+                word-break: break-word;
+            }
+
+            .account-edit-button {
+                width: 38px;
+                height: 38px;
+                min-width: 38px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="app">
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="brand">
+
+                <a href="index.html" class="brand-link">
+
+                    <div class="brand-mark">D</div>
+
+                    <div class="brand-info">
+                        <strong>DOFSKY</strong>
+                        <span>Workspace</span>
+                    </div>
+
+                </a>
+
+            </div>
+
+
+            <nav class="navigation" aria-label="Main navigation">
+
+                <a href="index.html" class="nav-item">
+                    <span aria-hidden="true">▦</span>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="projects.html" class="nav-item">
+                    <span aria-hidden="true">▣</span>
+                    <span>Projects</span>
+                </a>
+
+                <a href="tasks.html" class="nav-item">
+                    <span aria-hidden="true">✓</span>
+                    <span>Tasks</span>
+                </a>
+
+                <a href="clients.html" class="nav-item">
+                    <span aria-hidden="true">◉</span>
+                    <span>Clients</span>
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <a href="settings.html" class="nav-item active">
+                    <span aria-hidden="true">⚙</span>
+                    <span>Settings</span>
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <main class="main-content">
+
+
+            <header class="mobile-header">
+
+                <button
+                    type="button"
+                    class="menu-button"
+                    id="menuButton"
+                    aria-label="Open navigation"
+                    aria-controls="sidebar"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
+
+
+                <div class="mobile-brand">
+
+                    <div class="brand-mark">D</div>
+
+                    <div class="brand-info">
+                        <strong>DOFSKY</strong>
+                        <span>Workspace</span>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <header class="topbar">
+
+                <div class="page-heading">
+
+                    <p class="eyebrow">
+                        Workspace
+                    </p>
+
+                    <h1>
+                        Settings
+                    </h1>
+
+                    <p class="page-description">
+                        Manage your workspace settings.
+                    </p>
+
+                </div>
+
+            </header>
+
+
+            <!-- Account -->
+
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            Account
+                        </h2>
+
+                        <p>
+                            Your basic account information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="account-profile">
+
+                    <div
+                        class="profile-picture"
+                        id="settingsInitials"
+                    >
+                        D
+                    </div>
+
+
+                    <div class="account-details">
+
+                        <h3
+                            class="account-name-display"
+                            id="settingsDisplayName"
+                        >
+                            Your Name
+                        </h3>
+
+                        <p
+                            class="account-email-display"
+                            id="settingsDisplayEmail"
+                        >
+                            you@example.com
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="account-edit-button"
+                        id="settingsEditButton"
+                        aria-label="Edit account"
+                    >
+                        ✎
+                    </button>
+
+                </div>
+
+
+                <form
+                    id="settingsAccountForm"
+                    class="account-edit-form"
+                >
+
+                    <div class="form-group">
+
+                        <label for="settingsAccountName">
+                            Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="settingsAccountName"
+                            placeholder="Your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="settingsAccountEmail">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="settingsAccountEmail"
+                            placeholder="you@example.com"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            Save Account
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- Data -->
+
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            Data
+                        </h2>
+
+                        <p>
+                            Manage your DOFSKY data.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="settings-actions">
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="exportDataButton"
+                    >
+                        Export Data
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="danger-button"
+                        id="clearDataButton"
+                    >
+                        Clear Data
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- About -->
+
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            About DOFSKY
+                        </h2>
+
+                        <p>
+                            A simple workspace for managing clients, projects, and tasks.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="about-info">
+
+                    <span>
+                        Version
+                    </span>
+
+                    <strong>
+                        1.0.0
+                    </strong>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+
+    <script>
+
+        /* ========================================
+           Settings Account
+        ======================================== */
+
+        const settingsEditButton =
+            document.getElementById("settingsEditButton");
+
+        const settingsAccountForm =
+            document.getElementById("settingsAccountForm");
+
+        const settingsAccountName =
+            document.getElementById("settingsAccountName");
+
+        const settingsAccountEmail =
+            document.getElementById("settingsAccountEmail");
+
+        const settingsDisplayName =
+            document.getElementById("settingsDisplayName");
+
+        const settingsDisplayEmail =
+            document.getElementById("settingsDisplayEmail");
+
+        const settingsInitials =
+            document.getElementById("settingsInitials");
+
+
+        /* Get first and last name initials */
+
+        function getInitials(name) {
+
+            const parts =
+                name.trim().split(/\s+/).filter(Boolean);
+
+            if (parts.length === 0) {
+                return "D";
+            }
+
+            if (parts.length === 1) {
+                return parts[0].charAt(0).toUpperCase();
+            }
+
+            return (
+                parts[0].charAt(0) +
+                parts[parts.length - 1].charAt(0)
+            ).toUpperCase();
+
+        }
+
+
+        /* Update profile display */
+
+        function updateSettingsProfile(name, email) {
+
+            settingsDisplayName.textContent =
+                name || "Your Name";
+
+            settingsDisplayEmail.textContent =
+                email || "you@example.com";
+
+            settingsInitials.textContent =
+                getInitials(name);
+
+        }
+
+
+        /* Open editor */
+
+        settingsEditButton.addEventListener(
+            "click",
+            function () {
+
+                settingsAccountForm.classList.add("open");
+
+                settingsAccountName.focus();
+
+            }
+        );
+
+
+        /* Load saved account */
+
+        async function loadSettingsProfile() {
+
+            try {
+
+                const response =
+                    await fetch("/api/account");
+
+                if (!response.ok) {
+                    return;
+                }
+
+                const account =
+                    await response.json();
+
+                const name =
+                    account.full_name || "";
+
+                const email =
+                    account.email || "";
+
+
+                settingsAccountName.value =
+                    name;
+
+                settingsAccountEmail.value =
+                    email;
+
+
+                updateSettingsProfile(
+                    name,
+                    email
+                );
+
+            } catch (error) {
+
+                console.error(
+                    "Could not load account:",
+                    error
+                );
+
+            }
+
+        }
+
+
+        /* Save account */
+
+        settingsAccountForm.addEventListener(
+            "submit",
+            async function (event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    settingsAccountName.value.trim();
+
+                const email =
+                    settingsAccountEmail.value.trim();
+
+
+                try {
+
+                    const response =
+                        await fetch(
+                            "/api/account",
+                            {
+                                method: "POST",
+
+                                headers: {
+                                    "Content-Type":
+                                        "application/json"
+                                },
+
+                                body:
+                                    JSON.stringify({
+                                        full_name: name,
+                                        email: email
+                                    })
+                            }
+                        );
+
+
+                    if (!response.ok) {
+
+                        alert(
+                            "Could not save account."
+                        );
+
+                        return;
+
+                    }
+
+
+                    updateSettingsProfile(
+                        name,
+                        email
+                    );
+
+
+                    settingsAccountForm.classList.remove(
+                        "open"
+                    );
+
+                } catch (error) {
+
+                    console.error(
+                        "Could not save account:",
+                        error
+                    );
+
+                    alert(
+                        "Could not save account."
+                    );
+
+                }
+
+            }
+        );
+
+
+        loadSettingsProfile();
+
+    </script>
+
+</body>
+
+</html>

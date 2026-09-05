@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DOFSKY — Projects</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="brand">
+
+                <a href="index.html" class="brand-link">
+
+                    <div class="brand-mark">D</div>
+
+                    <div class="brand-info">
+                        <strong>DOFSKY</strong>
+                        <span>Workspace</span>
+                    </div>
+
+                </a>
+
+            </div>
+
+
+            <nav class="navigation" aria-label="Main navigation">
+
+                <a href="index.html" class="nav-item">
+                    <span aria-hidden="true">▦</span>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="projects.html" class="nav-item active">
+                    <span aria-hidden="true">▣</span>
+                    <span>Projects</span>
+                </a>
+
+                <a href="tasks.html" class="nav-item">
+                    <span aria-hidden="true">✓</span>
+                    <span>Tasks</span>
+                </a>
+
+                <a href="clients.html" class="nav-item">
+                    <span aria-hidden="true">◉</span>
+                    <span>Clients</span>
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <a href="settings.html" class="nav-item">
+                    <span aria-hidden="true">⚙</span>
+                    <span>Settings</span>
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Mobile Header -->
+            <header class="mobile-header">
+
+                <button
+                    type="button"
+                    class="menu-button"
+                    id="menuButton"
+                    aria-label="Open navigation"
+                    aria-controls="sidebar"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
+
+
+                <div class="mobile-brand">
+
+                    <div class="brand-mark">D</div>
+
+                    <div class="brand-info">
+                        <strong>DOFSKY</strong>
+                        <span>Workspace</span>
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="primary-button mobile-new-project"
+                    id="mobileNewProjectButton"
+                >
+                    + Project
+                </button>
+
+            </header>
+
+
+            <!-- Projects Header -->
+            <header class="topbar">
+
+                <div class="page-heading">
+
+                    <p class="eyebrow">
+                        Workspace
+                    </p>
+
+                    <h1>
+                        Projects
+                    </h1>
+
+                    <p class="page-description">
+                        Keep track of the work you are managing.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="primary-button"
+                    id="newProjectButton"
+                >
+                    + New Project
+                </button>
+
+            </header>
+
+
+            <!-- Projects List -->
+            <section
+                class="panel"
+                id="projectsListSection"
+            >
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            Projects
+                        </h2>
+
+                        <p>
+                            Your current projects.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="project-list"
+                    id="projectList"
+                >
+
+                    <div class="empty-state">
+
+                        <strong>
+                            No projects yet
+                        </strong>
+
+                        <span>
+                            Create your first project.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Project Details -->
+            <section
+                class="panel"
+                id="projectDetailsPanel"
+                hidden
+            >
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <button
+                            type="button"
+                            class="back-button"
+                            id="backToProjectsButton"
+                        >
+                            ← Back to Projects
+                        </button>
+
+                        <p class="eyebrow">
+                            Project
+                        </p>
+
+                        <h2 id="detailsProjectName">
+                            Project
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="editProjectButton"
+                    >
+                        Edit
+                    </button>
+
+                </div>
+
+
+                <div class="project-details-body">
+
+                    <div class="project-detail-item">
+
+                        <span>
+                            Client
+                        </span>
+
+                        <strong id="detailsProjectClient">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="project-detail-item">
+
+                        <span>
+                            Status
+                        </span>
+
+                        <strong id="detailsProjectStatus">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="project-detail-item">
+
+                        <span>
+                            Deadline
+                        </span>
+
+                        <strong id="detailsProjectDeadline">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="project-detail-section">
+
+                        <h3>
+                            Description
+                        </h3>
+
+                        <p id="detailsProjectDescription">
+                            —
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Edit Project -->
+            <section
+                class="panel"
+                id="projectEditPanel"
+                hidden
+            >
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            Edit Project
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <form id="projectEditForm">
+
+                    <input
+                        type="hidden"
+                        id="editProjectId"
+                    >
+
+
+                    <div class="form-group">
+
+                        <label for="editProjectName">
+                            Project Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="editProjectName"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="editProjectClient">
+                            Client
+                        </label>
+
+                        <select id="editProjectClient">
+
+                            <option value="">
+                                No client
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="editProjectDescription">
+                            Description
+                        </label>
+
+                        <textarea
+                            id="editProjectDescription"
+                            rows="4"
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="editProjectStartDate">
+                            Start Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="editProjectStartDate"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="editProjectDeadline">
+                            Deadline
+                        </label>
+
+                        <input
+                            type="date"
+                            id="editProjectDeadline"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="editProjectStatus">
+                            Status
+                        </label>
+
+                        <select id="editProjectStatus">
+
+                            <option value="planning">
+                                Planning
+                            </option>
+
+                            <option value="in-progress">
+                                In Progress
+                            </option>
+
+                            <option value="completed">
+                                Completed
+                            </option>
+
+                            <option value="on-hold">
+                                On Hold
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="cancelEditProjectButton"
+                        >
+                            Cancel
+                        </button>
+
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            Save Changes
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- New Project -->
+            <section
+                class="panel"
+                id="projectFormPanel"
+                hidden
+            >
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            New Project
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <form id="projectForm">
+
+                    <div class="form-group">
+
+                        <label for="projectName">
+                            Project Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="projectName"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="projectClient">
+                            Client
+                        </label>
+
+                        <select id="projectClient">
+
+                            <option value="">
+                                No client
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="projectDescription">
+                            Description
+                        </label>
+
+                        <textarea
+                            id="projectDescription"
+                            rows="4"
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="projectStartDate">
+                            Start Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="projectStartDate"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="projectDeadline">
+                            Deadline
+                        </label>
+
+                        <input
+                            type="date"
+                            id="projectDeadline"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="projectStatus">
+                            Status
+                        </label>
+
+                        <select id="projectStatus">
+
+                            <option value="planning">
+                                Planning
+                            </option>
+
+                            <option value="in-progress">
+                                In Progress
+                            </option>
+
+                            <option value="completed">
+                                Completed
+                            </option>
+
+                            <option value="on-hold">
+                                On Hold
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="cancelProjectButton"
+                        >
+                            Cancel
+                        </button>
+
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            Save Project
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

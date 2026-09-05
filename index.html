@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DOFSKY — Dashboard</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="brand">
+
+                <a href="index.html" class="brand-link">
+
+                    <div class="brand-mark">D</div>
+
+                    <div class="brand-info">
+                        <strong>DOFSKY</strong>
+                        <span>Workspace</span>
+                    </div>
+
+                </a>
+
+            </div>
+
+
+            <nav class="navigation" aria-label="Main navigation">
+
+                <a href="index.html" class="nav-item active">
+                    <span aria-hidden="true">▦</span>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="projects.html" class="nav-item">
+                    <span aria-hidden="true">▣</span>
+                    <span>Projects</span>
+                </a>
+
+                <a href="tasks.html" class="nav-item">
+                    <span aria-hidden="true">✓</span>
+                    <span>Tasks</span>
+                </a>
+
+                <a href="clients.html" class="nav-item">
+                    <span aria-hidden="true">◉</span>
+                    <span>Clients</span>
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <a href="settings.html" class="nav-item">
+                    <span aria-hidden="true">⚙</span>
+                    <span>Settings</span>
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Mobile Header -->
+            <header class="mobile-header">
+
+                <button
+                    type="button"
+                    class="menu-button"
+                    id="menuButton"
+                    aria-label="Open navigation"
+                    aria-controls="sidebar"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
+
+
+                <div class="mobile-brand">
+
+                    <div class="brand-mark">D</div>
+
+                    <div class="brand-info">
+                        <strong>DOFSKY</strong>
+                        <span>Workspace</span>
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="projects.html"
+                    class="primary-button mobile-new-project"
+                >
+                    + Project
+                </a>
+
+            </header>
+
+
+            <!-- Dashboard Header -->
+            <header class="topbar">
+
+                <div class="page-heading">
+
+                    <p class="eyebrow">
+                        Workspace
+                    </p>
+
+                    <h1>
+                        Dashboard
+                    </h1>
+
+                    <p class="page-description">
+                        A simple view of your work.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="projects.html"
+                    class="primary-button"
+                >
+                    + New Project
+                </a>
+
+            </header>
+
+
+            <!-- Overview -->
+            <section class="dashboard-overview">
+
+                <div class="overview-card">
+
+                    <span>
+                        Clients
+                    </span>
+
+                    <strong id="dashboardClientCount">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="overview-card">
+
+                    <span>
+                        Projects
+                    </span>
+
+                    <strong id="dashboardProjectCount">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="overview-card">
+
+                    <span>
+                        Tasks
+                    </span>
+
+                    <strong id="dashboardTaskCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </section>
+
+
+            <!-- Recent Projects -->
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            Recent Projects
+                        </h2>
+
+                        <p>
+                            Your latest projects.
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="projects.html"
+                        class="text-link"
+                    >
+                        View all
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="dashboard-list"
+                    id="recentProjects"
+                >
+
+                    <div class="empty-state">
+
+                        <strong>
+                            No projects yet
+                        </strong>
+
+                        <span>
+                            Your recent projects will appear here.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Recent Tasks -->
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            Recent Tasks
+                        </h2>
+
+                        <p>
+                            Your latest tasks.
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="tasks.html"
+                        class="text-link"
+                    >
+                        View all
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="dashboard-list"
+                    id="recentTasks"
+                >
+
+                    <div class="empty-state">
+
+                        <strong>
+                            No tasks yet
+                        </strong>
+
+                        <span>
+                            Your recent tasks will appear here.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
