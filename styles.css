@@ -29,6 +29,7 @@
 
 html {
     min-height: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -38,6 +39,8 @@ body {
 
     background: var(--background);
     color: var(--text);
+
+    overflow-x: hidden;
 }
 
 button,
@@ -711,15 +714,30 @@ form {
 @media (max-width: 800px) {
 
     .sidebar {
+        width: 82vw;
+        max-width: 300px;
+        min-width: 250px;
+
         transform: translateX(-100%);
 
         transition: transform 0.2s ease;
 
         box-shadow: 8px 0 30px rgba(0, 0, 0, 0.35);
+
+        overflow-y: hidden;
+        overflow-x: hidden;
     }
 
     .sidebar.open {
         transform: translateX(0);
+    }
+
+    .sidebar-bottom {
+        margin-top: 0;
+
+        padding: 0 12px 18px;
+
+        border-top: 0;
     }
 
     .main-content {
@@ -742,8 +760,10 @@ form {
     }
 
     .menu-button {
-        width: 40px;
-        height: 40px;
+        width: 42px;
+        height: 42px;
+
+        flex-shrink: 0;
 
         background: var(--surface);
 
@@ -753,11 +773,24 @@ form {
 
         border-radius: 7px;
 
-        font-size: 18px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 22px;
+        font-weight: 900;
+
+        line-height: 1;
+    }
+
+    .menu-button:hover {
+        background: var(--surface-light);
     }
 
     .mobile-brand {
         flex: 1;
+
+        min-width: 0;
 
         display: flex;
         align-items: center;
@@ -897,5 +930,19 @@ form {
 
     .list-actions .secondary-button {
         width: 100%;
+    }
+
+    .sidebar {
+        width: 84vw;
+        max-width: 300px;
+        min-width: 0;
+    }
+
+    .menu-button {
+        width: 44px;
+        height: 44px;
+
+        font-size: 23px;
+        font-weight: 900;
     }
 }
